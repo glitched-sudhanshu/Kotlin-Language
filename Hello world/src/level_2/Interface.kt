@@ -3,7 +3,8 @@ package level_2
 fun main() {
     val triangle = Triangle(2.0,3.0)
     val rhombus = Rhombus(4.0, 6.0)
-    allClonesAndDrags(arrayOf(triangle, rhombus))
+    val player = Player("Ranjan")
+    allClonesAndDrags(arrayOf(triangle, rhombus, player))
 }
 
 fun allClonesAndDrags(array: Array<Draggable>){
@@ -74,6 +75,18 @@ class Rhombus(val d1: Double, val d2: Double): Shape()
 
     override fun drag() {
         println("Drag Rhombus")
+    }
+}
+
+
+//Class that is not a part of same SHAPE inheritance hierarchy, but we are still able to use it in our function.
+class Player(val name: String): Draggable{
+    override fun clone() {
+        println("$name clone")
+    }
+
+    override fun drag() {
+        println("$name drag")
     }
 }
 

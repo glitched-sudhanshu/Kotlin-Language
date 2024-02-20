@@ -88,5 +88,7 @@ class Player(val name: String): Draggable{
     override fun drag() {
         println("$name drag")
     }
+
+    fun sayMyName() = println("My name is $name")
 }
 
